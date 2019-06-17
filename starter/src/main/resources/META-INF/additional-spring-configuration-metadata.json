@@ -1,0 +1,34 @@
+{
+  "properties": [
+    {
+      "name": "security.token.secret",
+      "type": "java.lang.String",
+      "description": "A description for 'security.token.secret'"
+    },
+    {
+      "name": "auth0.issuer",
+      "type": "java.lang.String",
+      "description": "A description for 'auth0.issuer'"
+    },
+    {
+      "name": "auth0.apiAudience",
+      "type": "java.lang.String",
+      "description": "A description for 'auth0.apiAudience'"
+    },
+    {
+      "name": "security.token.maxAgeSeconds",
+      "type": "java.lang.String",
+      "description": "A description for 'security.token.maxAgeSeconds'"
+    },
+    {
+      "name": "cloud.aws.credentials.secretKey",
+      "type": "java.lang.String",
+      "description": "A description for 'cloud.aws.credentials.secretKey'"
+    },
+    {
+      "name": "cloud.aws.credentials.accessKey",
+      "type": "java.lang.String",
+      "description": "A description for 'cloud.aws.credentials.accessKey'"
+    }
+  ]
+}

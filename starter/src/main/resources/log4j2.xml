@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp" packages="">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40C{1.} : %m%n%ex
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="RollingFile" fileName="logs/app.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <!--<Syslog name="SYSLOG-TCP" host="logs4.papertrailapp.com" port="32831"-->
+                <!--protocol="TCP" appName="MyApp" mdcId="mdc"-->
+                <!--facility="LOCAL0" enterpriseNumber="18060" newLine="true"-->
+                <!--format="RFC5424" ignoreExceptions="false" exceptionPattern="%throwable{full}">-->
+        <!--</Syslog>-->
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="RollingFile" level="info"/>
+            <!--<AppenderRef ref="SYSLOG-TCP"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
