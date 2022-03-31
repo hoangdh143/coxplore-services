@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>8</java.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-        <spring.version>2.0.5.RELEASE</spring.version>
+        <spring.version>2.5.12</spring.version>
         <maven.assembly.plugin.version>2.6</maven.assembly.plugin.version>
     </properties>
 
